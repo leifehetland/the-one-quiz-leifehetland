@@ -29,9 +29,20 @@ http-server
 1. Explain what hoisting is. Provide your answer below.
 
   **Student answer: **
+  Hoisting is the where in Javascript we declare all our variables at the top for the purpose of scope.
+
 1. What is a callback? Why do we use them in JavaScript? Provide your answer, and code a simple example below.
 
   **Student answer: **
+  A callback is a reference to a piece of executable code that we set up if we want to execute in somewhere else in our code.
+
+  function callback(banana) {
+    var banana = 2;
+  }
+
+  function fruit(callback) {
+    console.log("Yum");
+  }
 
 ## Functions and operators
 
@@ -61,18 +72,36 @@ http-server
 1. Write a function named `getAnimals` that uses the jQuery `ajax` method to retrieve the `data/animals.json` file. When you execute the functions, it should just log *just the array* of animals to the console when the async is complete. Make sure you provide a prompt of "animals" when logging the array.
 1. What are the four HTTP verbs that you can use in an XHR that correspond to the CRUD actions (create, read, update, delete)?
   **Student answer:**
+  POST=Create, GET=Read, PUT= Update, DELETE= delete
 
 1. Why did we use Promises when dealing with asynchronous XHR calls?
   **Student answer:**
+  We use promises because they went until after we make our ajax calls to run so we can grab data and the perform another piece of code to the data.
 
 1. Provide a simple example of the syntax for handling a Promise.
   **Student answer:**
+
+  return {
+    promisesPromises: function() {
+      var deferred = q.defer();
+      $.ajax({ url: "https://banana.firebaseio.com/banana.json" })
+        .done(function(json_data) {
+          deferred.resolve(json_data);
+        })
+        .fail(function(xhr, status, error) {  
+          deferred.reject(error);
+        });
+      return deferred.promise;
+    }
+  };
 
 ## Scope and this
 
 What gets logged to the console when the following code executes? Explain why.
 
 **Student answer: **
+
+The reason 42 gets logged is because it is on the top(global scope) and since the steve function is being called on the window scope. 
 
 ```
 var answer = "42";

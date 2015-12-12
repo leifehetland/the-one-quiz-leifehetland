@@ -1,0 +1,37 @@
+li:first-child {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+li {
+  display: inline;
+}
+
+section:nth-of-type(2n+1) {
+  border: 1px solid black;
+}
+
+li:nth-child(2n+0) {
+  background-color: lime;
+}
+
+section:nth-of-type(2) aside:nth-of-type(2) {
+  color: blue;
+}
+
+#onRight,
+#onLeft {
+  display: inline-block;
+}
+
+#onRight {
+  float: right;
+}
+
+#below {
+	text-align: center;
+}
+
+body {
+	background-color: skyblue;
+}
